@@ -10,8 +10,8 @@ BASE_USER="pi"
 BASE_USER_PASSWORD="raspberry"
 
 # Image source
-DOWNLOAD_URL_CHECKSUM="https://github.com/jscancella/RatOS/releases/download/cb1-checksum/CB1_Debian11_bullseye_Klipper_kernel5.16_20221110.img.sha256"
-DOWNLOAD_URL_IMAGE="https://github.com/bigtreetech/CB1/releases/download/V2.2.1/CB1_Debian11_bullseye_minimal_kernel5.16_20221110.img.xz"
+DOWNLOAD_URL_CHECKSUM="https://github.com/stas2z/orangepi-build-cb1/releases/download/0.1f/Bttcb1_3.0.6_debian_bullseye_minimal_linux5.16.17.img.sha"
+DOWNLOAD_URL_IMAGE="https://github.com/stas2z/orangepi-build-cb1/releases/download/0.1f/Bttcb1_3.0.6_debian_bullseye_minimal_linux5.16.17.img"
 
 # export Variables
 export BASE_ARCH
