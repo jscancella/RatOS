@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksite=self.webpackChunksite||[]).push([[9821],{8119:function(e){e.exports=JSON.parse('{"permalink":"/blog/tags/rat-os","page":1,"postsPerPage":10,"totalPages":1,"totalCount":5,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
