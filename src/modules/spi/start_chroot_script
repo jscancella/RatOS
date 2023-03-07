@@ -20,7 +20,11 @@ install_cleanup_trap
 echo_green "Enable SPI interface on SBC's ..."
 
 # Step 1: Copy default config to backup file
-cp "${SPI_CONFIG_TXT_FILE}" "${SPI_CONFIG_BAK_FILE}"
+
+if [[ -e "${SPI_CONFIG_TXT_FILE}" ]]
+then
+  cp "${SPI_CONFIG_TXT_FILE}" "${SPI_CONFIG_BAK_FILE}"
+fi
 
 # Step 2: Enable SPI
 echo "overlays=spi" >> "${SPI_CONFIG_TXT_FILE}"
