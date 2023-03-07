@@ -13,8 +13,8 @@ export BASE_DISTRO=armbian
 export BASE_ROOT_PARTITION=1
 
 # Image source
-DOWNLOAD_URL_CHECKSUM="https://armbian.chi.auroradev.org/dl/orangepi3-lts/archive/Armbian_22.11.1_Orangepi3-lts_bullseye_current_5.15.80.img.xz.sha"
-DOWNLOAD_URL_IMAGE="https://armbian.chi.auroradev.org/dl/orangepi3-lts/archive/Armbian_22.11.1_Orangepi3-lts_bullseye_current_5.15.80.img.xz"
+DOWNLOAD_URL_CHECKSUM="https://armbian.chi.auroradev.org/dl/orangepi3-lts/archive/Armbian_23.02.2_Orangepi3-lts_bullseye_current_5.15.93.img.xz.sha"
+DOWNLOAD_URL_IMAGE="https://armbian.chi.auroradev.org/dl/orangepi3-lts/archive/Armbian_23.02.2_Orangepi3-lts_bullseye_current_5.15.93.img.xz"
 
 # export Variables
 export BASE_ARCH
