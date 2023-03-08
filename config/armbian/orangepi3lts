@@ -23,4 +23,4 @@ export BASE_IMAGE_RESIZEROOT
 export DOWNLOAD_URL_CHECKSUM
 export DOWNLOAD_URL_IMAGE
 
-export MODULES="base,passwordless_sudo,pkgupgrade(network,klipper,node,is_req_preinstall,moonraker,spi,ratos(mainsail,crowsnest,linear_movement_analysis,timelapse,klipperscreen,rpi_mcu,disable-services(hotspot_cb1),dfu-util),password-for-sudo),postrename"
+export MODULES="base,passwordless_sudo,pkgupgrade(network,orangepiconfig,klipper,node,is_req_preinstall,moonraker,spi,ratos(mainsail,crowsnest,linear_movement_analysis,timelapse,klipperscreen,rpi_mcu,disable-services(hotspot_cb1),dfu-util),password-for-sudo),postrename"

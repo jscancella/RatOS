@@ -10,7 +10,7 @@ source /common.sh
 install_cleanup_trap
 
 echo_green "Install ratos hotspot tool dependencies..."
-check_install_pkgs dnsmasq
+check_install_pkgs dnsmasq hostapd
 
 echo_green "Downloading ratos hotspot tool..."
 pushd "/home/${BASE_USER}"
