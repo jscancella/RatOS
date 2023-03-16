@@ -24,9 +24,14 @@ install_cleanup_trap
 echo_green "Copying 90-gpio-spi.rules..."
 unpack /filesystem/root /
 
-# Step 2: add spi group
+# Step 2: enable SPI
 groupadd -f --system spi
 usermod -a -G spi "${BASE_USER}"
+
+echo "overlays=spi-spidev1
+param_spidev_spi_bus=1" >> /boot/armbianEnv.txt
+
+echo "spidev" >> /etc/modules
 
 # Step 3: Disable bluetooth and related services
 echo_green "Disabling Bluetooth related services..."
