@@ -2,7 +2,7 @@ name: Build RatOS
 on:
   push:
     branches:
-      - "orange_pi_3lts"
+      - "orange_pi_3lts_using_official_image"
     paths:
       - "src/modules/**"
       - "src/build_dist"
