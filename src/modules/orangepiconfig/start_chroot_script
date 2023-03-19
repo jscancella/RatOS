@@ -28,8 +28,16 @@ unpack /filesystem/root /
 groupadd -f --system spi
 usermod -a -G spi "${BASE_USER}"
 
-echo "overlays=spi-spidev1
-param_spidev_spi_bus=1" >> /boot/armbianEnv.txt
+# for armbian images
+if [[ "$BASE_DISTRO" == "armbian" ]]
+then
+  echo "overlays=spi-spidev1
+  param_spidev_spi_bus=1" >> /boot/armbianEnv.txt
+else
+  # for orangepi os images
+  echo "overlays=spi-spidev1
+  param_spidev_spi_bus=1" >> orangepiEnv.txt
+fi
 
 echo "spidev" >> /etc/modules
 
