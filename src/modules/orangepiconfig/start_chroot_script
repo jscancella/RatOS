@@ -59,10 +59,3 @@ check_install_pkgs avahi
 
 #add the same groups as the biqu user
 usermod -a -G disk,audio,plugdev,games,users,systemd-journal,input,netdev,ssh "${BASE_USER}"
-
-#update mirror list (because orangepi os uses china mirrors and that is too slow for building on github)
-echo "deb http://deb.debian.org/debian bullseye main contrib non-free
-deb http://deb.debian.org/debian bullseye-updates main contrib non-free
-
-deb http://deb.debian.org/debian bullseye-backports main contrib non-free
-#deb http://deb.debian.org/debian bullseye-security main contrib non-free" > /etc/apt/sources.list
