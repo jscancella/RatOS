@@ -59,3 +59,10 @@ check_install_pkgs avahi
 
 #add the same groups as the biqu user
 usermod -a -G disk,audio,plugdev,games,users,systemd-journal,input,netdev,ssh "${BASE_USER}"
+
+#make sure /etc/board-release exists
+if [ ! -f /etc/board-release ]
+then
+  #using the orange pi os image which doesn't have /etc/board-release but has /etc/orangepi-release
+  ln -s /etc/orangepi-release /etc/board-release
+fi
