@@ -6,7 +6,7 @@ then
   SSID=`grep -E "^\s+ssid" /etc/wpa_supplicant/wpa_supplicant.conf | sed 's/^[[:space:]]*//g' | cut -c 7- | sed 's/.$//'`
   #PASSWORD=`grep -E "^\s+#psk" /etc/wpa_supplicant/wpa_supplicant.conf | sed 's/^[[:space:]]*//g' | cut -c 6-`
   PASSWORD=`grep -E "^\s+psk" /etc/wpa_supplicant/wpa_supplicant.conf | sed 's/^[[:space:]]*//g' | cut -c 5-`
-  sudo nmcli dev wifi connect "${SSID}" password "${PASSWORD}"
+  nmcli dev wifi connect "${SSID}" password "${PASSWORD}"
 fi
 
 #if wifi is not connected
