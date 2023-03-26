@@ -1,14 +1,12 @@
 [Unit]
-Description=Create AP Service
-Wants=network-online.target
+Description=Generate hotspot or connect to SSID
 After=network-online.target
+Requires=network-online.target
 
 [Service]
-Type=simple
+Type=oneshot
+RemainAfterExit=yes
 ExecStart=/usr/bin/start_hotspot.sh
-KillSignal=SIGINT
-Restart=on-failure
-RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
