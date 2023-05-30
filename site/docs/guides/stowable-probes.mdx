@@ -4,6 +4,9 @@ import Illustration from "./_media/stowable_probes.excalidraw.svg";
 
 RatOS 2.0 and higher has support for Stowable Probes. Preset includes exists for euclid, klicky and unclicky at the time of writing. To use one of the presets, you need to uncomment it in your printer.cfg. If you use a stowable probe that doesn't have a preset, you can use any one of the presets as a template, just copy the contents into the `USER OVERRIDES` section in your printer.cfg and modify to fit your probe.
 
+## Wiring
+Stowable probes are wired the same as regular z probes (5v/inductive) in RatOS. Just follow the RatOS wiring for your board (most importantly the signal pin, which is black on the RatOS diagram, should use the same pin).
+
 ## Dock position
 
 You may need to change and/or finetune your dock position for reliable pickup and stowing. The procedure is made out of the following 4 points:

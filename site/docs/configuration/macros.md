@@ -4,7 +4,11 @@ sidebar_position: 1
 
 # Configuring RatOS Macros
 
-RatOS comes with a bunch of flexible predefined macro's that can be customized via variables. In your printer.cfg at the bottom of the Macro's section, you'll notice this:
+RatOS comes with a bunch of flexible predefined macro's that can be customized via variables and macro hooks.
+
+## Variables
+
+In your printer.cfg at the bottom of the Macro's section, you'll notice this:
 
 ```properties title="printer.cfg"
 ##########################################
@@ -50,6 +54,8 @@ Travel speed to use for gcode moves in RatOS Macro's in mm/s.
 | variable_safe_home_x  | "middle" / number | "middle" | The x coordinate for where to return the toolhead to when homing Z                  |
 | variable_safe_home_y  | "middle" / number | "middle  | The y coordinate for where to return the toolhead to when homing Z                  |
 | variable_homing_z_hop | number            | 15       | How much to raise the toolhead after homing Z. Probe configs may change this value. |
+| variable_driver_type_x| string            | "tmc2209"| The driver type used on X. Used to restore current after sensorless homing          |
+| variable_driver_type_y| string            | "tmc2209"| The driver type used on X. Used to restore current after sensorless homing          |
 
 ### Heating
 
@@ -120,3 +126,57 @@ These variables are only relevant when using a stowable probe such as Euclid or 
 | Name                  | Possible Values     | Default   | Description                                                                                                                                                                       |
 | --------------------- | ------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | variable_skew_profile | string or undefined | undefined | Use this if you have calibrated and saved a skew profile that you want to load in the START_PRINT macro. To activate it, set the variable to the name of your saved skew profile. |
+
+## User macro hooks
+
+These hooks do nothing by default, that means you can safely implement them in your USER OVERRIDES section without copy pasting anything from the RatOS config files, like so:
+
+```properties
+[gcode_macro _USER_START_PRINT_BED_MESH]
+gcode:
+	SETUP_KAMP_MESHING
+```
+
+### \_USER_START_PRINT_HEAT_CHAMBER
+
+Runs right after the chamber has started heating, if CHAMBER_TEMP is supplied to START_PRINT.
+
+### \_USER_START_PRINT_AFTER_HEATING_BED
+
+Runs right after the bed has reached temp, before the internal \_START_PRINT_AFTER_HEATING_BED
+
+### \_USER_START_PRINT_BED_MESH
+
+Runs before \_START_PRINT_BED_MESH
+
+### \_USER_START_PRINT_PARK
+
+Runs before \_START_PRINT_PARK
+
+### \_USER_START_PRINT_AFTER_HEATING_EXTRUDER
+
+Runs just before \_START_PRINT_AFTER_HEATING_EXTRUDER
+
+## Internal macro hooks
+
+These hooks are used internally, so if you override these be sure to copy paste the original implementation and modify that or you may break some functionality. Remember to check if there's an override in the printer's macro.cfg file, in which case that's the one you would copy.
+
+### \_START_PRINT_HEAT_CHAMBER
+
+Heats the chamber, if CHAMBER_TEMP is supplied to START_PRINT.
+
+### \_START_PRINT_AFTER_HEATING_BED
+
+Runs right after the bed has reached temp, after \_USER_START_PRINT_AFTER_HEATING_BED. It is usually used for additional bed calibration, such as Z_TILT_ADJUST or QUAD_GANTRY_LEVELING depending on the printer.
+
+### \_START_PRINT_BED_MESH
+
+Handles bed meshing logic.
+
+### \_START_PRINT_PARK
+
+Parks the extruder while heating the nozzle to print temperature.
+
+### \_START_PRINT_AFTER_HEATING_EXTRUDER
+
+Primes the nozzle and loads the skew profile if any is defined in the RatOS variables.

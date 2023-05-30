@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#### CB1SPI - CB1 Configuration Module
+
+# Shebang for better file detection
+# shellcheck disable=all
+
+[ -n "$CB1SPI_CONFIG_TXT_FILE" ] || CB1SPI_CONFIG_TXT_FILE="/boot/BoardEnv.txt"
+[ -n "$CB1SPI_CONFIG_BAK_FILE" ] || CB1SPI_CONFIG_BAK_FILE="/boot/BoardEnv.txt.backup"

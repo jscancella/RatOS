@@ -30,6 +30,8 @@ Alternatively, if you're using a pi with Ethernet, you can use an ethernet cable
 
 :::info
 It is heavily recommended that you flash your board and make sure it is detected in the configurator **before** you plug in your stepper drivers and start connecting your wiring.
+
+It may be required for you to use an SD Card to initially flash your board. If this is required, then be sure to use a good quality SD card that is no more than 32GB in size. Additionally, it should be formatted with either FAT16 (sometimes just called FAT), or FAT32 with a cluster size of 8kb or 4kb
 :::
 
 After completing the wifi setup wizard, wait a couple of minutes, then open [http://RatOS.local/configure?step=1](http://RatOS.local/configure?step=1) in your browser (or whatever hostname you chose during setup). Complete the wizard to flash your control board and optionally a toolboard. When you've done that successfully, the configurator will lead you to Mainsail, which we'll now use to update RatOS and related packages to the latest version.
@@ -60,4 +62,4 @@ Now it's time to start wiring. Find your board under "Supported Boards" in the d
 
 ## Setup
 
-With the board flashed and everything wired up, you can now proceed to the [configuration guide](configuration).
+With the board flashed and everything wired up, you can now proceed to the [configuration guide](/docs/configuration).
