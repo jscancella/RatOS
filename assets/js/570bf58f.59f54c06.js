@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksite=self.webpackChunksite||[]).push([[2558],{4121:function(a){a.exports=JSON.parse('{"label":"Mainsail","permalink":"/blog/tags/mainsail","allTagsPath":"/blog/tags","count":1}')}}]);
