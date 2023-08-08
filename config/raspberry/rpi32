@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+# Shebang for better file detection
+
 DOWNLOAD_URL_CHECKSUM="https://downloads.raspberrypi.org/raspios_lite_armhf_latest.sha256"
 DOWNLOAD_URL_IMAGE="https://downloads.raspberrypi.org/raspios_lite_armhf_latest.torrent"
 

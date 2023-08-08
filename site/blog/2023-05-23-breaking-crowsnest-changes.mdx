@@ -11,7 +11,7 @@ Make sure to read these instructions carefully before starting the process, so y
 
 ## Upgrading
 
-1. Update crowsnest in the machine tab in mainsail. Make sure it's >= v4.0.0.
+1. Update crowsnest in the machine tab in mainsail. If it's no longer there, skip this step.
 2. Open a terminal window or command prompt (win + r, type cmd, hit enter) and ssh into your printer. The password is `raspberry` unless you changed it.
 
 ```
@@ -24,6 +24,7 @@ ssh pi@<your printer's hostname.local or ip address without the angle brackets>
 
 ```
 cd crowsnest
+git pull
 git checkout legacy/v3
 make uninstall
 ```

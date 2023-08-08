@@ -49,13 +49,13 @@ Travel speed to use for gcode moves in RatOS Macro's in mm/s.
 
 ### Homing
 
-| Name                  | Possible Values   | Default  | Description                                                                         |
-| --------------------- | ----------------- | -------- | ----------------------------------------------------------------------------------- |
-| variable_safe_home_x  | "middle" / number | "middle" | The x coordinate for where to return the toolhead to when homing Z                  |
-| variable_safe_home_y  | "middle" / number | "middle  | The y coordinate for where to return the toolhead to when homing Z                  |
-| variable_homing_z_hop | number            | 15       | How much to raise the toolhead after homing Z. Probe configs may change this value. |
-| variable_driver_type_x| string            | "tmc2209"| The driver type used on X. Used to restore current after sensorless homing          |
-| variable_driver_type_y| string            | "tmc2209"| The driver type used on X. Used to restore current after sensorless homing          |
+| Name                   | Possible Values   | Default   | Description                                                                         |
+| ---------------------- | ----------------- | --------- | ----------------------------------------------------------------------------------- |
+| variable_safe_home_x   | "middle" / number | "middle"  | The x coordinate for where to return the toolhead to when homing Z                  |
+| variable_safe_home_y   | "middle" / number | "middle   | The y coordinate for where to return the toolhead to when homing Z                  |
+| variable_homing_z_hop  | number            | 15        | How much to raise the toolhead after homing Z. Probe configs may change this value. |
+| variable_driver_type_x | string            | "tmc2209" | The driver type used on X. Used to restore current after sensorless homing          |
+| variable_driver_type_y | string            | "tmc2209" | The driver type used on X. Used to restore current after sensorless homing          |
 
 ### Heating
 
@@ -137,6 +137,10 @@ gcode:
 	SETUP_KAMP_MESHING
 ```
 
+### \_USER_START_PRINT_BEFORE_HOMING
+
+Runs before the printer homes at the start of START_PRINT.
+
 ### \_USER_START_PRINT_HEAT_CHAMBER
 
 Runs right after the chamber has started heating, if CHAMBER_TEMP is supplied to START_PRINT.
@@ -156,6 +160,18 @@ Runs before \_START_PRINT_PARK
 ### \_USER_START_PRINT_AFTER_HEATING_EXTRUDER
 
 Runs just before \_START_PRINT_AFTER_HEATING_EXTRUDER
+
+### \_USER_END_PRINT_BEFORE_HEATERS_OFF
+
+Runs before the heaters are turned off in END_PRINT
+
+### \_USER_END_PRINT_AFTER_HEATERS_OFF
+
+Runs after the heaters are turned off in END_PRINT
+
+### \_USER_END_PRINT_PARK
+
+Runs before the toolhead is parked in END_PRINT
 
 ## Internal macro hooks
 
